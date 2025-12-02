@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>شيفرة كود - مركز التدريب والتطوير</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">&lt;/&gt;</div>
+        <div>
+          <div style="font-weight:800">شـيفرة كود</div>
+          <div class="muted" style="font-size:13px">مركز شيفرة للتدريب و التطوير</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#" data-page="home" class="active">الرئيسية</a>
+        <a href="#" data-page="courses">الدورات</a>
+        <a href="#" data-page="portfolio">أعمالنا</a>
+        <a href="#" data-page="contact">تواصل</a>
+      </nav>
+    </header>
+
+    <!-- Home -->
+    <main id="page-home">
+      <section class="hero">
+        <div class="hero-card">
+          <h1>فرصتك تبدأ من هنا — التدريب الميداني لطلبة الجامعات</h1>
+          <p class="lead">انضم إلى برامجنا العملية لتطوير مهاراتك في البرمجة، التصميم، والذكاء الاصطناعي. تدريب عملي على مشاريع حقيقية وبناء معرض أعمال قوي.</p>
+          <div class="cta">
+            <button class="btn" id="open-book">احجز دورة الآن</button>
+            <a class="btn ghost" href="#" data-page="courses">اطّلع على الدورات</a>
+          </div>
+
+          <div style="margin-top:18px" class="cards">
+            <div class="card">
+              <h3>Flutter - بناء تطبيقات متقدمة</h3>
+              <p>تعلّم بناء تطبيقات واجهة مستخدم جميلة باستخدام Flutter و Dart.</p>
+            </div>
+            <div class="card">
+              <h3>معالجة الصور و الـ AI</h3>
+              <p>دورة للمبتدئين في معالجة الصور وتطبيقات الذكاء الاصطناعي.</p>
+            </div>
+            <div class="card">
+              <h3>تصميم جرافيك</h3>
+              <p>أساسيات التصميم بصريا وإنشاء معرض أعمال رقمي.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9f8d3d9f9f1a7d1b" alt="hero" style="width:100%;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,0.6)">
+          <div style="margin-top:12px;color:var(--muted)">اتصل عبر: +972 59-232-3418 — انستغرام: @code_.center</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Courses -->
+    <section id="page-courses" style="display:none;margin-top:10px">
+      <div class="hero-card">
+        <h2>الدورات المتاحة</h2>
+        <p class="muted">اختر الدورة المناسبة لك — الكمية محدودة</p>
+        <div style="margin-top:16px" class="courses-grid" id="coursesList"></div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="page-portfolio" style="display:none;margin-top:10px">
+      <div class="hero-card">
+        <h2>معرض الأعمال</h2>
+        <p class="muted">نماذج أعمال الطلاب ومشاريع التخرج</p>
+        <div style="margin-top:12px" class="portfolio-grid" id="portfolioGrid"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="page-contact" style="display:none;margin-top:10px">
+      <div class="hero-card">
+        <h2>تواصل معنا</h2>
+        <p class="muted">أرسل لنا رسالة أو تابعنا على السوشال</p>
+        <form id="contactForm" style="margin-top:12px">
+          <input type="text" id="cname" placeholder="الاسم" required>
+          <input type="email" id="cemail" placeholder="البريد الإلكتروني" required>
+          <textarea id="cmsg" placeholder="رسالتك"></textarea>
+          <div class="row">
+            <button class="btn" type="submit">أرسل</button>
+            <div class="right muted">روابط: 
+              <a href="https://instagram.com/code_.center" target="_blank" style="color:inherit;text-decoration:underline">
+                Instagram
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      © شيفرة كود - مركز التدريب و التطوير — تم التطوير بواسطة فريق شيفرة
+    </footer>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal" id="modal-book">
+    <div class="dialog">
+      <h3>نموذج حجز دورة</h3>
+      <form id="bookingForm" style="margin-top:10px">
+        <input type="text" id="name" placeholder="الاسم الكامل" required>
+        <input type="tel" id="phone" placeholder="رقم الجوال" required>
+        <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+        <select id="courseSelect" required>
+          <option value="">اختر الدورة</option>
+        </select>
+        <div class="row">
+          <button class="btn" type="submit">إرسال الحجز</button>
+          <button type="button" class="btn ghost" id="closeBook">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div class="modal" id="modal-img">
+    <div class="dialog" style="text-align:center">
+      <img id="modalImgEl" src="" alt="">
+      <div style="margin-top:12px;text-align:left">
+        <button class="btn ghost" id="closeImg">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* ——— كل كود CSS الخاص فيك ——— */
+:root{
+  --bg:#0b1230; --card:#0f1630; --accent:#6c63ff; --muted:#9aa0c7; --glass:rgba(255,255,255,0.03);
+  --radius:14px; --maxw:1100px;
+  font-family: 'Tajawal', system-ui, Arial, sans-serif;
+}
+html,body{height:100%;}
+body{margin:0;background:linear-gradient(180deg,#08091a 0%, #0b1230 100%);color:#fff;line-height:1.5}
+.container{max-width:var(--maxw);margin:0 auto;padding:20px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .mark{width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4b7bff);display:grid;place-items:center;font-weight:700}
+nav{display:flex;gap:8px;align-items:center}
+nav a{color:#e6e9ff;text-decoration:none;padding:10px 12px;border-radius:10px;font-weight:600}
+nav a.active,nav a:hover{background:var(--glass)}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:18px}
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:26px;border-radius:18px}
+h1{margin:0 0 10px 0;font-size:24px}
+p.lead{color:var(--muted);margin:0 0 18px}
+.cta{display:flex;gap:12px}
+.btn{background:var(--accent);border:none;color:#fff;padding:12px 16px;border-radius:12px;cursor:pointer;font-weight:700}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.card{background:var(--card);padding:14px;border-radius:12px}
+.card h3{margin:0 0 6px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+footer{margin:30px 0 60px;color:var(--muted);text-align:center}
+
+/* Courses */
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.course{background:linear-gradient(180deg,#0f1730, #0d1230);padding:14px;border-radius:12px}
+.meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:8px}
+
+/* Portfolio */
+.portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.portfolio-grid img{width:100%;height:160px;object-fit:cover;border-radius:10px;cursor:pointer}
+
+/* Contact */
+form{display:grid;gap:10px}
+input,select,textarea{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff}
+textarea{min-height:100px}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:60}
+.modal.open{display:flex}
+.dialog{background:#08112a;padding:18px;border-radius:12px;max-width:760px;width:95%}
+.modal img{max-height:70vh;width:auto}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .cards,.courses-grid{grid-template-columns:repeat(2,1fr)}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:520px){
+  nav{display:none}
+  header{padding:12px}
+  .cards,.courses-grid{grid-template-columns:1fr}
+  .portfolio-grid{grid-template-columns:1fr}
+  .logo .mark{width:44px;height:44px}
+}
+
+.muted{color:var(--muted)}
+.row{display:flex;gap:10px;align-items:center}
+.right{margin-left:auto}
